@@ -1,0 +1,79 @@
+/* *{
+    border: 3px solid green;
+} */
+
+/*  grid */
+.link-container { 
+    display: grid; 
+    padding-top:500px;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr; 
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    }
+
+h2{
+    grid-area: 1 / 1 / 2 / 2; 
+    font-size: 4rem;
+    display: block;
+    text-align: center;
+    z-index:6;
+}
+svg{
+    grid-area: 1 / 1 / 2 / 2;
+    width:100%;
+    display:block;
+    margin: auto;
+    fill:white;
+    z-index:30;
+}
+svg:hover{
+    fill:black;
+    animation: slideInLeft 2s normal forwards ease-in-out;
+}
+
+/* Animation causes element to jump to a different part of the page */
+@keyframes moveEntirely{
+    0% {
+        fill:blue;
+        position: static;
+        top: auto;
+        left: auto;
+
+    }
+    100%{
+        fill:red;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+    }
+
+}
+
+@keyframes moveIn{
+    0% {
+        fill:blue;
+        
+
+    }
+    100%{
+        fill:red;
+
+}
+}
+
+@keyframes slideInLeft {
+    from {
+      transform: translate3d(-100%, 0, 0);
+      visibility: hidden;
+    }
+  
+    to {
+      transform: translate3d(0, 0, 100%);
+      visibility: visible;
+    }
+  }
+  
+  .slideInLeft {
+    animation-name: slideInLeft;
+  }
